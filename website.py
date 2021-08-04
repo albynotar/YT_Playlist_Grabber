@@ -16,16 +16,16 @@ def result():
     if request.method == 'POST':
         playlist_url = request.form['Playlist_URL']
         ydl_opts = {
+            'ignoreerrors': True,
             'skip_download': True,
-            'playlistreverse': True,
-            'playlist_items': [1],
+            'playlistrandom': True,
+            'playliststart': 1,
+            'playlistend': 1,
+            'age_limit': 0,
         }
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             ydl.cache.remove()
-            try:
-                info = ydl.extract_info(playlist_url, download=False)
-            except youtube_dl.utils.DownloadError:
-                return render_template('error.html')
+            info = ydl.extract_info(playlist_url, download=False)
             if info is None:
                 return render_template('error.html')
             else:

@@ -1,38 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
     <section class="section">
-
-        <div class="field is-grouped">
-            <article class="message is-info">
+        <div class="block">
+            <div class="columns">
+                <div class="column is-half">
+                    <article class="message is-info">
                         <div class="message-header">
                             <p>Info</p>
                         </div>
                         <div class="message-body">
-                            <div class= "content">
-                            <ul>
-                                <li>The "None lines" are videos blocked, removed or age-limited.
-                                </li>
-                                <li>You can download the tables as json using the specific buttons.
-                                </li>
-                            </ul>
-                                </div>
+                            <div class="content">
+                                <ul>
+                                    <li>The "None lines" are videos blocked, removed or age-limited.
+                                    </li>
+                                    <li>You can download the tables as json using the specific buttons.
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </article>
-            <div class="control">
-                <form action="/download" method="POST">
-                    <button class="button is-outlined is-info" name="Download" value="playlist_information.json">
-                        Playlist_Info
-                    </button>
-                </form>
+                </div>
             </div>
-            <div class="control">
-                <form action="/download" method="POST">
-                    <button class="button is-outlined is-info" name="Download" value="video_information.json">
-                        Video_Info
-                    </button>
-                </form>
-
         </div>
+        <div class="block">
+                <div class="field is-grouped">
+                    <div class="control">
+                        <form action="/download" method="POST">
+                            <button class="button is-outlined is-info" name="Download"
+                                    value="playlist_information.json">
+                                Playlist_Info
+                            </button>
+                        </form>
+                    </div>
+
+                <div class="control">
+                    <form action="/download" method="POST">
+                        <button class="button is-outlined is-info" name="Download" value="video_information.json">
+                            Video_Info
+                        </button>
+                    </form>
+                </div>
+                    </div>
             </div>
         <div class="block">
             <div class="container">
