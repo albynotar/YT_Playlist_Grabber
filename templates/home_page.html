@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half">
+                    <div class="block">
+                        <form class="box" action="/process" method="POST">
+
+                            <div class="field is-grouped">
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">Playlist Url</label>
+                                    </div>
+
+                                </div>
+                                <div class="control is-expanded">
+                                    <label>
+                                        <input class="input" type="text" placeholder="Playlist URL" name="Playlist_URL">
+                                    </label>
+                                </div>
+
+
+                                <div class="control">
+                                    <button class="button is-info" type="submit" value="Playlist_URL">Submit</button>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="column is-half">
+                <div class="block">
+                    <article class="message is-info">
+                        <div class="message-header">
+                            <p>Info</p>
+                        </div>
+                        <div class="message-body">
+                            <div class="content">
+                                <ul>
+
+                                    <li>The processing time change depending on the <strong>playlist length</strong>,
+                                        your <strong>connection speed</strong> and <strong><em>God Youtube (can ban the
+                                            program at anytime)</em></strong> so if you load a playlist of 5000 videos
+                                        keep
+                                        that in mind.
+                                    </li>
+                                    <li>The playlist must be <strong>public</strong>.</li>
+                                    <li>You can download the tables as json using the specific buttons after the process
+                                        is complete.
+                                    </li>
+                                    <li>Try it with: <em>https://www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX</em>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

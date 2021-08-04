@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="section">
+        <div class="columns">
+            <div class="column is-half">
+                <article class="message is-danger">
+                    <div class="message-header">
+                        <p>Error</p>
+                    </div>
+                    <div class="message-body">
+                        <div class="content">
+                            <p>One of the following situation occured:</p>
+                            <ul>
+                                <li>Your query is not a <strong>valid</strong> youtube playlist link.
+                                </li>
+                                <li>Your query refers to a <strong>private</strong> youtube playlist.</li>
+                                <li>Youtube <strong>blocked</strong> the requests from the website, try again in a few hours.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+{% endblock %}
