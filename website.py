@@ -2,6 +2,13 @@ from flask import Flask, render_template, request, send_file
 from query import check_query
 from extraction import processing
 
+"""
+Webpage to ask and receive particular information about a yt playlist.
+Information is obtained with yt-dlp and it is displayed on the webpage with pandas dataframes.
+Webpage created with Flask.
+"""
+
+
 app = Flask(__name__)
 
 
@@ -15,17 +22,24 @@ def home_page():
 @app.route('/process', methods=['POST'])
 def result():
     if request.method == 'POST':
+        # get playlist url from form
         playlist_url = str(request.form['Playlist_URL']).strip()
 
+        # get attributes to extract from form
         info_attributes = set()
         for key, value in request.form.items():
             if key != 'Playlist_URL':
                 info_attributes.add(value)
+
+        # query validation
         query_check, error_message = check_query(playlist_url)
-        # setting to extract info_json from a random video of playlist
+
+        # if query check return False
         if not query_check:
             return render_template('error.html', query='"'+playlist_url+'"', error_message=error_message)
+        # if query check passed
         else:
+            # extract info using extraction.py processing function
             r = processing(str(query_check), info_attributes)
             # render process template with results as tables
             return render_template('process.html',
@@ -49,4 +63,6 @@ def error():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
+    # DEBUG
+    # app.run(debug=True)

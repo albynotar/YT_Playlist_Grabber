@@ -3,7 +3,8 @@ import yt_dlp
 import re
 
 """
-Function that checks and cleans the query inserted as input
+Function that checks and cleans a query inserted as input.
+The query must be a valid yt-playlist url to pass the validation.
 """
 
 
@@ -15,8 +16,8 @@ def check_query(query):
     # analyze the query using urlparse
     o = urlparse(url)
     # DEBUG
-    #print(url)
-    #print(o)
+    # print(url)
+    # print(o)
     # if the link does not contain youtube return False
     if not o.netloc == 'www.youtube.com' and 'youtube.com' not in o.path:
         return False, 'Your Query is not a youtube link'
@@ -25,9 +26,8 @@ def check_query(query):
         return False, 'Your Query is not a playlist url'
     # if the link does not contain a playlist code return False
     playlist_id = o.query
-    playlist_id.replace('list=','')
+    playlist_id.replace('list=', '')
     clear_query = 'https://www.youtube.com/playlist?' + str(playlist_id)
-    print(clear_query)
     # options to extract info
     ydl_opts = {
         'forcejson': True,
