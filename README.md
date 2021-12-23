@@ -2,7 +2,9 @@
 
 A simple website to get playlist and video information from a YT playlist as a .json.
 
-[DEMO WEBSITE](http://ytgrabber.eu.pythonanywhere.com/) hosted on [eu.pythoneverywhere.com](eu.pythoneverywhere.com)
+**[DEMO WEBSITE](http://ytgrabber.eu.pythonanywhere.com/)**
+
+Hosted on [eu.pythoneverywhere.com](eu.pythoneverywhere.com).
 
 
 # Dependencies
