@@ -1,181 +1,181 @@
 {% extends "base.html" %}
 {% block content %}
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-half">
-                    <div class="block">
-                        <form class="box" action="/process" method="POST">
-                            <div class="field is-grouped">
-                                <div class="field is-horizontal">
-                                    <div class="field-label is-normal">
-                                        <label class="label">Playlist Url</label>
-                                    </div>
-                                </div>
-                                <div class="control is-expanded">
-                                    <label>
-                                        <input class="input" type="text" placeholder="Playlist URL" name="Playlist_URL">
-                                    </label>
-                                </div>
-                                <div class="control">
-                                    <button class="button is-info" type="submit">Submit</button>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="control">
-                                    <p style="color:green;"><i>Fast attributes &#126 30 seconds for 5000 videos</i></p>
-                                </div>
-                                <div class="field is-grouped is-grouped-multiline">
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="id" value='id' type="checkbox" checked>
-                                            ID
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="title" value='title' type="checkbox" checked>
-                                            Title
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="uploader" value='uploader' type="checkbox" checked>
-                                            Uploader
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="duration" value='duration' type="checkbox" checked>
-                                            Duration
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="webpage_url" value='webpage_url' type="checkbox" checked>
-                                            Webpage Url
-                                        </label></button>
-                                    </p>
-                                </div>
-                                <div class="control">
-                                    <p style="color:red;"><i>Slow attributes &#126 2 hours for 5000 videos</i></p>
-                                </div>
-                                <div class="field is-grouped is-grouped-multiline">
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="index" value='playlist_index' type="checkbox">
-                                            Index
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="upload_date" value='upload_date' type="checkbox">
-                                            Upload Date
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="view_count" value='view_count' type="checkbox">
-                                            View Count
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="like_count" value='like_count' type="checkbox">
-                                            Like Count
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="average_rating" value='average_rating' type="checkbox">
-                                            Average Rating
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="age_limit" value='age_limit' type="checkbox">
-                                            Age Limit
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="categories" value='categories' type="checkbox">
-                                            categories
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="tags" value='tags' type="checkbox">
-                                            Tags
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="alt_title" value='alt_title' type="checkbox">
-                                            Alternative title
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="uploader_id" value='uploader_id' type="checkbox">
-                                            Uploader ID
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="uploader_url" value='uploader_url' type="checkbox">
-                                            Uploader Url
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="channel_id" value='channel_id' type="checkbox">
-                                            Channel ID
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="channel_url" value='channel_url' type="checkbox">
-                                            Channel Url
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="thumbnails" value='thumbnails' type="checkbox">
-                                            Thumbnails
-                                        </label></button>
-                                    </p>
-                                    <p class="control">
-                                        <button type="button" class="button is-light"><label class="checkbox">
-                                            <input name="description" value='description' type="checkbox">
-                                            Description
-                                        </label></button>
-                                    </p>
-                                </div>
-                            </div>
-                        </form>
+    <div class="columns">
+    <div class="column is-three-fifths is-offset-one-fifth">
+        <div class="block">
+            <div class="container is-fluid">
+                <article class="message is-warning">
+                    <div class="message-body">
+                        Due to website hoster limitations, if the request takes <strong>more than 5 minutes</strong> to be processed the website will <strong>block</strong> it. If you want to bypass the 5 minutes request limit you can deploy the website on your local machine downloading the <a href="https://github.com/albynotar/YT_Playlist_Grabber">GitHub repository</a>.
                     </div>
-                </div>
+                </article>
+                <form class="box" action="/process" method="POST">
+                    <div class="field is-grouped">
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label">Playlist Url</label>
+                            </div>
+                        </div>
+                        <div class="control is-expanded">
+                            <label>
+                                <input class="input" type="text" placeholder="Playlist URL" name="Playlist_URL">
+                            </label>
+                        </div>
+                        <div class="control">
+                            <button class="button is-info" type="submit">Submit</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="control">
+                            <p style="color:green;">
+                                <i>Fast attributes &#126; 30 seconds for 5000 videos</i>
+                            </p>
+                        </div>
+                        <div class="field is-grouped is-grouped-multiline">
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="id" value='id' type="checkbox" checked> ID </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="title" value='title' type="checkbox" checked> Title </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="uploader" value='uploader' type="checkbox" checked> Uploader </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="duration" value='duration' type="checkbox" checked> Duration </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="webpage_url" value='webpage_url' type="checkbox" checked> Webpage Url </label>
+                                </button>
+                            </p>
+                        </div>
+                        <div class="control">
+                            <p style="color:red;">
+                                <i>Slow attributes &#126; 2 hours for 5000 videos (more attributes, more time)</i>
+                            </p>
+                        </div>
+                        <div class="field is-grouped is-grouped-multiline">
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="index" value='playlist_index' type="checkbox"> Index </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="upload_date" value='upload_date' type="checkbox"> Upload Date </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="view_count" value='view_count' type="checkbox"> View Count </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="like_count" value='like_count' type="checkbox"> Like Count </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="average_rating" value='average_rating' type="checkbox"> Average Rating </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="age_limit" value='age_limit' type="checkbox"> Age Limit </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="categories" value='categories' type="checkbox"> categories </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="tags" value='tags' type="checkbox"> Tags </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="alt_title" value='alt_title' type="checkbox"> Alternative title </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="uploader_id" value='uploader_id' type="checkbox"> Uploader ID </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="uploader_url" value='uploader_url' type="checkbox"> Uploader Url </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="channel_id" value='channel_id' type="checkbox"> Channel ID </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="channel_url" value='channel_url' type="checkbox"> Channel Url </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="thumbnails" value='thumbnails' type="checkbox"> Thumbnails </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input name="description" value='description' type="checkbox"> Description </label>
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="column is-half">
-            <div class="block">
+        <div class="block">
+            <div class="container is-fluid">
                 <article class="message is-info">
-                    <div class="message-header">
-                        <p>Info</p>
-                    </div>
                     <div class="message-body">
-                        <div class="content">
+                    <div class="content">
                             <ul>
-                                <li>The playlist must be <strong>public</strong>.</li>
-                                <li>You can download the tables as json using the specific buttons after the process
-                                    is complete.
-                                </li>
-                                <li>Try it with:
-                                    <p>
-                                        <em><a href="https://www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX">
-                                            https://www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX
-                                        </a></em>
+                                <li>The playlist must be <strong>public</strong>. </li>
+                                <li>You can download the tables as json using the specific buttons after the process is complete. </li>
+                                <li>Try it with: <p>
+                                        <em>
+                                            <a href="https://www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX"> https://www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX </a>
+                                        </em>
                                     </p>
                                 </li>
                             </ul>
@@ -184,5 +184,5 @@
                 </article>
             </div>
         </div>
-    </section>
-{% endblock %}
+    </div>
+</div> {% endblock %}

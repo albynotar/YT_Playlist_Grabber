@@ -8,7 +8,6 @@ Information is obtained with yt-dlp and it is displayed on the webpage with pand
 Webpage created with Flask.
 """
 
-
 app = Flask(__name__)
 
 
@@ -36,17 +35,19 @@ def result():
 
         # if query check return False
         if not query_check:
-            return render_template('error.html', query='"'+playlist_url+'"', error_message=error_message)
+            return render_template('error.html', query='"' + playlist_url + '"', error_message=error_message)
         # if query check passed
         else:
             # extract info using extraction.py processing function
             r = processing(str(query_check), info_attributes)
             # render process template with results as tables
             return render_template('process.html',
-                                   playlist_table=r[0].to_html(classes='table is-narrow is-striped is-fullwidth is-hoverable',
-                                                               index=False, header="true"),
-                                   video_table=r[1].to_html(classes='table is-narrow is-striped is-fullwidth is-hoverable',
-                                                            index=False, header="true"))
+                                   playlist_table=r[0].to_html(
+                                       classes='table is-narrow is-striped is-fullwidth is-hoverable',
+                                       index=False, header="true"),
+                                   video_table=r[1].to_html(
+                                       classes='table is-narrow is-striped is-fullwidth is-hoverable',
+                                       index=False, header="true"))
 
 
 # route for downloading a data table as json
