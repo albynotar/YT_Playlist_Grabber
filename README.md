@@ -16,3 +16,8 @@ Python Libraries:
 
 CSS framework:
 * [bulma](https://bulma.io/)
+
+
+# License
+
+* [BSD-3-Clause License](https://choosealicense.com/licenses/bsd-3-clause/)
