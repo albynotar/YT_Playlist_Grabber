@@ -4,7 +4,7 @@ A simple website to get playlist and video information from a YT playlist as a .
 
 **[DEMO WEBSITE](http://ytgrabber.eu.pythonanywhere.com/)**
 
-Hosted on [eu.pythoneverywhere.com](eu.pythoneverywhere.com).
+Hosted on [eu.pythoneverywhere.com](https://eu.pythonanywhere.com/).
 
 
 # Dependencies
