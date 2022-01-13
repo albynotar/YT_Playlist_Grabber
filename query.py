@@ -13,21 +13,35 @@ def check_query(query):
         return False, 'Your Query is empty'
     # remove any special character from query
     url = re.sub(r'\s+', '', query)
-    # analyze the query using urlparse
-    o = urlparse(url)
-    # DEBUG
-    # print(url)
-    # print(o)
-    # if the link does not contain youtube return False
-    if not o.netloc == 'www.youtube.com' and 'youtube.com' not in o.path:
+
+    # adjusted query
+    clear_url = ''
+
+    # checks for a youtube domain
+    if url.startswith('https://www.youtube.com/'):
+        clear_url = str(url)
+    elif url.startswith('//www.youtube.com/'):
+        clear_url = str('https:') + str(url)
+    elif url.startswith('www.youtube.com/'):
+        clear_url = str('https://') + str(url)
+    elif url.startswith('youtube.com/'):
+        clear_url = str('https://www.') + str(url)
+
+    # if the url does not contain a youtube url domain return False
+    if clear_url == '':
         return False, 'Your Query is not a youtube link'
+
+    # analyze the query using urlparse
+    o = urlparse(clear_url)
+
     # if the link does not contain a playlist query return False
-    elif 'list=' not in o.query:
-        return False, 'Your Query is not a playlist url'
-    # if the link does not contain a playlist code return False
-    playlist_id = o.query
-    playlist_id.replace('list=', '')
-    clear_query = 'https://www.youtube.com/playlist?' + str(playlist_id)
+    if 'list=' not in o.query:
+        return False, 'Your Query is not a youtube playlist url'
+
+    # if the link does not contain a playlist id return False
+    if o.query.endswith('list='):
+        return False, 'Your Query does not contain a youtube playlist id'
+
     # options to extract info
     ydl_opts = {
         'forcejson': True,
@@ -45,25 +59,31 @@ def check_query(query):
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.cache.remove()
         # extract info
-        info = ydl.extract_info(clear_query, download=False)
+        info = ydl.extract_info(clear_url, download=False)
         if info is None:
             # if info not extracted (non valid url)
-            return False, 'Your Query is not a valid playlist url'
+            return False, 'Your Query does not contain a valid youtube playlist id'
         else:
             # if info extracted (valid url)
-            return clear_query, None
+            return clear_url, None
 
 
 if __name__ == '__main__':
     # DEBUG
-    # work
-    print(check_query(''))
+    print('WORK')
     print(check_query('https://www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX'))
+    print(check_query('ps://www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX'))
+    print(check_query('//www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX'))
     print(check_query('www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX'))
     print(check_query('youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX'))
-    print(check_query('https://www.youtube.com/watch?v=AEtbFm_CjE0&list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX&index=1'))
     print(check_query('https://www.youtube.com/watch?v=AEtbFm_CjE0&list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX'))
-    # dont work
-    print(check_query('https://www.youtube.com/watch?v=jNQXAC9IVRw'))
-    print(check_query('https://www.youtube.com/playlist?list=PLNyO\n\t\rBdEyngbhgFRGVTGC DRCWTQ\n\t\r'))
-    print(check_query('https://www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uC'))
+    print(check_query('https://www.youtube.com/watch?v=AEtbFm_CjE0&list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX&index=1'))
+    print(check_query('https://www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX&watch?v=AEtbFm_CjE0'))
+    print(check_query('https://www.youtube.com/playlist?list=PLNyOBdEynvBp1E\t03WBh33-P\rhBG9 WSQ-uX\n'))
+
+    print('\nERROR')
+    print(check_query(''))  # empty string
+    print(check_query('dfg\rhuyt|df-.\n\t'))  # random string
+    print(check_query('https://www.youtube.com/watch?v=jNQXAC9IVRw'))  # youtube video link
+    print(check_query('https://www.youtube.com/playlist?list='))  # empty playlist id
+    print(check_query('https://www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uC'))  # invalid playlist id
