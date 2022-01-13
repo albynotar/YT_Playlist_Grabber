@@ -2,13 +2,14 @@ import yt_dlp
 import json
 import pandas as pd
 
-
 """
 Request a valid yt playlist url and a set of attributes to download the function.
 The function returns two .json files (playlist_info.json and video_info.json) with the 
 playlist info and its videos info requested and 
 two pandas dataframes for displaying the information to the webpage
 """
+
+
 def processing(u, filter_keys):
     # settings for logger to not print anything in command line
     class MyLogger:
