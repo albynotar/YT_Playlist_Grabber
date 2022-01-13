@@ -1,36 +1,28 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% block content %}
     <div class="columns">
-    <div class="column is-4 is-offset-4">
-        <div class="container is-fluid">
-                <div class="box">
-                    <div class="field is-grouped is-grouped-centered">
-                        <div class="control">
-                            <form action="/download" method="POST">
-                                <button class="button is-outlined is-info is-light is-medium" name="Download" value="playlist_info.json">Playlist_Info</button>
-                            </form>
-                        </div>
-                        <div class="control">
-                            <form action="/download" method="POST">
-                                <button class="button is-outlined is-info is-light is-medium" name="Download" value="video_info.json">Video_Info</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-</div>
-<div class="columns">
     <div class="column is-three-fifths is-offset-one-fifth">
         <div class="block">
             <div class="container is-fluid">
                 <article class="message is-info">
-                    <div class="message-body"> The "<i>None</i>" lines are videos blocked, removed or age-limited. </div>
+                    <div class="message-body"> The " <i>None</i>" lines are videos blocked, removed or age-restricted. </div>
                 </article>
             </div>
         </div>
         <div class="block">
             <div class="container is-fluid">
-                <h1 class="title">Playlist Information</h1>
+                <div class="level">
+                    <div class="level-left">
+                        <div class="level-item">
+                            <p class="title">Playlist Information</p>
+                        </div>
+                        <div class="level-item">
+                            <form action="/download" method="POST">
+                                <button class="button is-outlined is-info is-light is-medium level-item" name="Download" value="playlist_info.json">Playlist_Info </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 <div class="content is-small">
                     <div class="table-container">
                         <table class="table is-striped is-narrow is-hoverable">
@@ -42,8 +34,21 @@
         </div>
         <div class="block">
             <div class="container is-fluid">
-                <h1 class="title">Videos Information</h1>
-                <h4 class="subtitle is-6"><i>First 10 results are displayed, to get the full dataframe download video_info.json file</i></h4>
+                <div class="level">
+                    <div class="level-left">
+                        <div class="level-item">
+                            <p class="title">Video Information</p>
+                        </div>
+                        <div class="level-item">
+                            <form action="/download" method="POST">
+                                <button class="button is-outlined is-info is-light is-medium" name="Download" value="video_info.json">Video_Info</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <p class="subtitle is-6">
+                    <i>First 10 results are displayed, to get the full dataframe download video_info.json file</i>
+                </p>
                 <div class="content is-small">
                     <div class="table-container">
                         <table class="table is-striped is-narrow is-hoverable">
