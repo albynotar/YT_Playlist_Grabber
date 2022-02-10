@@ -11,6 +11,7 @@ Hosted on [eu.pythoneverywhere.com](https://eu.pythonanywhere.com/).
 
 Python Libraries:
 * [flask](https://flask.palletsprojects.com/)
+* [flask-caching](https://flask-caching.readthedocs.io/)
 * [pandas](https://pandas.pydata.org/)
 * [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 
