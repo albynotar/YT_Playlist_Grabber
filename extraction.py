@@ -4,9 +4,8 @@ import pandas as pd
 
 """
 Request a valid yt playlist url and a set of attributes to download the function.
-The function returns two .json files (playlist_info.json and video_info.json) with the 
-playlist info and its videos info requested and 
-two pandas dataframes for displaying the information to the webpage
+The function returns two .json files (playlist_info.json and video_info.json) with the playlist info 
+and its videos info requested and two pandas dataframes for displaying the information to the webpage
 """
 
 
