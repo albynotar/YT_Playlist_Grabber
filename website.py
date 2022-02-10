@@ -22,7 +22,8 @@ def home_page():
 def result():
     if request.method == 'POST':
         # get playlist url from form
-        playlist_url = str(request.form['Playlist_URL']).strip()
+        # limit to first 150 characters
+        playlist_url = str(request.form['Playlist_URL'][0:150]).strip()
 
         # get attributes to extract from form
         info_attributes = set()
@@ -35,7 +36,10 @@ def result():
 
         # if query check return False
         if not query_check:
-            return render_template('error.html', query='"' + playlist_url + '"', error_message=error_message)
+            # reduce query length if too long > 50
+            if len(playlist_url) > 50:
+                playlist_url = playlist_url[:20] + ' [...] ' + playlist_url[-20:]
+            return render_template('error.html', query=playlist_url, error_message=error_message)
         # if query check passed
         else:
             # extract info using extraction.py processing function
