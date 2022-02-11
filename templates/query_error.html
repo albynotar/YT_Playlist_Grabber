@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="columns">
+    <div class="column is-4 is-offset-4">
+                <article class="message is-danger">
+                    <div class="message-header">
+                        <p>Error</p>
+                    </div>
+                    <div class="message-body">
+                        <div class="content">
+                            <p>Your Query:</p>
+                            <p><i>{{ query }}</i></p>
+                            <p><strong>ERROR:</strong></p>
+                            <p><i>{{ error_message }}</i></p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+{% endblock %}
