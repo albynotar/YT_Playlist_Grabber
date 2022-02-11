@@ -21,4 +21,4 @@ CSS framework:
 
 # License
 
-* [BSD-3-Clause License](https://choosealicense.com/licenses/bsd-3-clause/)
+* [MIT License](https://choosealicense.com/licenses/mit/)
