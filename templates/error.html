@@ -1,20 +1,13 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
     <div class="columns">
-    <div class="column is-4 is-offset-4">
-                <article class="message is-danger">
-                    <div class="message-header">
-                        <p>Error</p>
-                    </div>
-                    <div class="message-body">
-                        <div class="content">
-                            <p>Your Query:</p>
-                            <p><i>{{ query }}</i></p>
-                            <p><strong>ERROR:</strong></p>
-                            <p><i>{{ error_message }}</i></p>
-                        </div>
-                    </div>
-                </article>
+        <div class="column is-three-fifths is-offset-one-fifth">
+            <div class="container is-fluid">
+                <h1 style="font-size:200px;" class="title is-1 has-text-centered">:( {{ code }}</h1>
+                <p class="title is-3 has-text-centered">{{ description }}</p>
+                <p class="has-text-centered">
+                    <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">What?</a>
+                </p>
             </div>
         </div>
+    </div>
 {% endblock %}
