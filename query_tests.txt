@@ -15,6 +15,5 @@ https://www.youtube.com/watch?v=jNQXAC9IVRw  # youtube video link
 https://www.youtube.com/playlist?list=  # empty playlist id
 https://www.youtube.com/playlist?list=PLNyOBdE  # short playlist id
 https://www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uC # wrong playlist id
-https://www.youtube.com/playlist?list=kmhtgmjyhtgrfdcsvbgnhbnhjk # youtube redirect to homepage without informing yt-dlp
-https://www.youtube.com/playlist?list=kmhtgmjyhtgrfdcsvb_jgyUhgvhTGU # same as above ongoing issue https://github.com/yt-dlp/yt-dlp/issues/2660
-xcv987tyhgevcxddsdv-PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX same as above https://github.com/yt-dlp/yt-dlp/issues/2660
+https://www.youtube.com/playlist?list=kmhtgmjyhtgrfdcsvbgnhbnhjk # random nonexistent playlist id
+xcv987tyhgevcxddsdv-PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX # random string similar to a playlist ID
