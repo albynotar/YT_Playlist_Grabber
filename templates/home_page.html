@@ -1,12 +1,19 @@
-{% extends "base.html" %}
-{% block content %}
-    <div class="columns">
+{% extends "base.html" %} {% block content %}
+<div class="columns">
     <div class="column is-three-fifths is-offset-one-fifth">
         <div class="block">
             <div class="container is-fluid">
                 <article class="message is-warning">
                     <div class="message-body">
-                        Due to website hoster limitations, if the request takes <strong>more than 5 minutes</strong> to be processed the website will <strong>block</strong> it. If you want to bypass the 5 minutes request limit you can deploy the website on your local machine downloading the <a href="https://github.com/albynotar/YT_Playlist_Grabber">GitHub repository</a>.
+                        Due to website hoster limitations, if the request takes
+                        <strong>more than 5 minutes</strong> to be processed the
+                        website will <strong>block</strong> it. If you want to
+                        bypass the 5 minutes request limit you can deploy the
+                        website on your local machine downloading the
+                        <a
+                            href="https://github.com/albynotar/YT_Playlist_Grabber"
+                            >GitHub repository</a
+                        >.
                     </div>
                 </article>
                 <form class="box" action="/process" method="POST">
@@ -18,145 +25,899 @@
                         </div>
                         <div class="control is-expanded">
                             <label>
-                                <input class="input" type="text" placeholder="Playlist URL" name="Playlist_URL" required>
+                                <input
+                                    class="input"
+                                    type="text"
+                                    placeholder="Playlist URL"
+                                    name="Playlist_URL"
+                                    required
+                                />
                             </label>
                         </div>
                         <div class="control">
-                            <button class="button is-info" type="submit">Submit</button>
+                            <button class="button is-info" type="submit">
+                                Submit
+                            </button>
                         </div>
                     </div>
                     <div>
                         <div class="control">
                             <p style="color:green;">
-                                <i>Fast attributes &#126; 30 seconds for 5000 videos</i>
+                                <i
+                                    >Fast attributes &#126; 30 seconds for 5000
+                                    videos</i
+                                >
                             </p>
                         </div>
                         <div class="field is-grouped is-grouped-multiline">
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="id" value='id' type="checkbox" checked> ID </label>
+                                        <input
+                                            name="id"
+                                            value="id"
+                                            type="checkbox"
+                                            checked
+                                        />
+                                        ID
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="title" value='title' type="checkbox" checked> Title </label>
+                                        <input
+                                            name="title"
+                                            value="title"
+                                            type="checkbox"
+                                            checked
+                                        />
+                                        Title
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="uploader" value='uploader' type="checkbox" checked> Uploader </label>
+                                        <input
+                                            name="uploader"
+                                            value="uploader"
+                                            type="checkbox"
+                                            checked
+                                        />
+                                        Uploader
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="duration" value='duration' type="checkbox" checked> Duration </label>
+                                        <input
+                                            name="duration"
+                                            value="duration"
+                                            type="checkbox"
+                                            checked
+                                        />
+                                        Duration
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="webpage_url" value='webpage_url' type="checkbox" checked> Webpage Url </label>
+                                        <input
+                                            name="webpage_url"
+                                            value="webpage_url"
+                                            type="checkbox"
+                                            checked
+                                        />
+                                        Webpage Url
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="channel_id"
+                                            value="channel_id"
+                                            type="checkbox"
+                                            checked
+                                        />
+                                        Channel_ID
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="thumbnails"
+                                            value="thumbnails"
+                                            type="checkbox"
+                                            checked
+                                        />
+                                        Thumbnails
+                                    </label>
                                 </button>
                             </p>
                         </div>
                         <div class="control">
                             <p style="color:red;">
-                                <i>Slow attributes &#126; 2 hours for 5000 videos (more attributes, more time)</i>
+                                <i
+                                    >Slow attributes &#126; from hours to &infin;?
+                                    for 5000 videos (more attributes, more
+                                    time)</i
+                                >
                             </p>
                         </div>
                         <div class="field is-grouped is-grouped-multiline">
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="index" value='playlist_index' type="checkbox"> Index </label>
+                                        <input
+                                            name="formats"
+                                            value="formats"
+                                            type="checkbox"
+                                        />
+                                        Formats
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="upload_date" value='upload_date' type="checkbox"> Upload Date </label>
+                                        <input
+                                            name="thumbnail"
+                                            value="thumbnail"
+                                            type="checkbox"
+                                        />
+                                        Thumbnail
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="view_count" value='view_count' type="checkbox"> View Count </label>
+                                        <input
+                                            name="description"
+                                            value="description"
+                                            type="checkbox"
+                                        />
+                                        Description
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="like_count" value='like_count' type="checkbox"> Like Count </label>
+                                        <input
+                                            name="uploader_id"
+                                            value="uploader_id"
+                                            type="checkbox"
+                                        />
+                                        Uploader ID
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="average_rating" value='average_rating' type="checkbox"> Average Rating </label>
+                                        <input
+                                            name="uploader_url"
+                                            value="uploader_url"
+                                            type="checkbox"
+                                        />
+                                        Uploader Url
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="age_limit" value='age_limit' type="checkbox"> Age Limit </label>
+                                        <input
+                                            name="channel_url"
+                                            value="channel_url"
+                                            type="checkbox"
+                                        />
+                                        Channel Url
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="categories" value='categories' type="checkbox"> categories </label>
+                                        <input
+                                            name="view_count"
+                                            value="view_count"
+                                            type="checkbox"
+                                        />
+                                        View Count
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="tags" value='tags' type="checkbox"> Tags </label>
+                                        <input
+                                            name="average_rating"
+                                            value="average_rating"
+                                            type="checkbox"
+                                        />
+                                        Average Rating
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="alt_title" value='alt_title' type="checkbox"> Alternative title </label>
+                                        <input
+                                            name="age_limit"
+                                            value="age_limit"
+                                            type="checkbox"
+                                        />
+                                        Age Limit
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="uploader_id" value='uploader_id' type="checkbox"> Uploader ID </label>
+                                        <input
+                                            name="categories"
+                                            value="categories"
+                                            type="checkbox"
+                                        />
+                                        Categories
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="uploader_url" value='uploader_url' type="checkbox"> Uploader Url </label>
+                                        <input
+                                            name="tags"
+                                            value="tags"
+                                            type="checkbox"
+                                        />
+                                        Tags
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="channel_id" value='channel_id' type="checkbox"> Channel ID </label>
+                                        <input
+                                            name="playable_in_embed"
+                                            value="playable_in_embed"
+                                            type="checkbox"
+                                        />
+                                        Playable In Embed
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="channel_url" value='channel_url' type="checkbox"> Channel Url </label>
+                                        <input
+                                            name="is_live"
+                                            value="is_live"
+                                            type="checkbox"
+                                        />
+                                        Is Live
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="thumbnails" value='thumbnails' type="checkbox"> Thumbnails </label>
+                                        <input
+                                            name="was_live"
+                                            value="was_live"
+                                            type="checkbox"
+                                        />
+                                        Was Live
+                                    </label>
                                 </button>
                             </p>
                             <p class="control">
                                 <button type="button" class="button is-light">
                                     <label class="checkbox">
-                                        <input name="description" value='description' type="checkbox"> Description </label>
+                                        <input
+                                            name="live_status"
+                                            value="live_status"
+                                            type="checkbox"
+                                        />
+                                        Live Status
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="release_timestamp"
+                                            value="release_timestamp"
+                                            type="checkbox"
+                                        />
+                                        Release Timestamp
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="automatic_captions"
+                                            value="automatic_captions"
+                                            type="checkbox"
+                                        />
+                                        Automatic Captions
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="subtitles"
+                                            value="subtitles"
+                                            type="checkbox"
+                                        />
+                                        Subtitles
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="chapters"
+                                            value="chapters"
+                                            type="checkbox"
+                                        />
+                                        Chapters
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="like_count"
+                                            value="like_count"
+                                            type="checkbox"
+                                        />
+                                        Like Count
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="channel"
+                                            value="channel"
+                                            type="checkbox"
+                                        />
+                                        Channel
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="channel_follower_count"
+                                            value="channel_follower_count"
+                                            type="checkbox"
+                                        />
+                                        Channel Follower Count
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="upload_date"
+                                            value="upload_date"
+                                            type="checkbox"
+                                        />
+                                        Upload Date
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="availability"
+                                            value="availability"
+                                            type="checkbox"
+                                        />
+                                        Availability
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="original_url"
+                                            value="original_url"
+                                            type="checkbox"
+                                        />
+                                        Original Url
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="webpage_url_basename"
+                                            value="webpage_url_basename"
+                                            type="checkbox"
+                                        />
+                                        Webpage Url Basename
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="webpage_url_domain"
+                                            value="webpage_url_domain"
+                                            type="checkbox"
+                                        />
+                                        Webpage Url Domain
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="extractor"
+                                            value="extractor"
+                                            type="checkbox"
+                                        />
+                                        Extractor
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="extractor_key"
+                                            value="extractor_key"
+                                            type="checkbox"
+                                        />
+                                        Extractor Key
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="n_entries"
+                                            value="n_entries"
+                                            type="checkbox"
+                                        />
+                                        N Entries
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="_last_playlist_index"
+                                            value="_last_playlist_index"
+                                            type="checkbox"
+                                        />
+                                        Last Playlist Index
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="playlist_count"
+                                            value="playlist_count"
+                                            type="checkbox"
+                                        />
+                                        Playlist Count
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="playlist_index"
+                                            value="playlist_index"
+                                            type="checkbox"
+                                        />
+                                        Playlist Index
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="playlist_autonumber"
+                                            value="playlist_autonumber"
+                                            type="checkbox"
+                                        />
+                                        Playlist Autonumber
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="playlist"
+                                            value="playlist"
+                                            type="checkbox"
+                                        />
+                                        Playlist
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="playlist_id"
+                                            value="playlist_id"
+                                            type="checkbox"
+                                        />
+                                        Playlist ID
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="playlist_title"
+                                            value="playlist_title"
+                                            type="checkbox"
+                                        />
+                                        Playlist Title
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="playlist_uploader"
+                                            value="playlist_uploader"
+                                            type="checkbox"
+                                        />
+                                        Playlist Uploader
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="playlist_uploader_id"
+                                            value="playlist_uploader_id"
+                                            type="checkbox"
+                                        />
+                                        Playlist Uploader ID
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="display_id"
+                                            value="display_id"
+                                            type="checkbox"
+                                        />
+                                        Display ID
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="fulltitle"
+                                            value="fulltitle"
+                                            type="checkbox"
+                                        />
+                                        Fulltitle
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="duration_string"
+                                            value="duration_string"
+                                            type="checkbox"
+                                        />
+                                        Duration String
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="requested_subtitles"
+                                            value="requested_subtitles"
+                                            type="checkbox"
+                                        />
+                                        Requested Subtitles
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="__has_drm"
+                                            value="__has_drm"
+                                            type="checkbox"
+                                        />
+                                        Has Drm
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="requested_formats"
+                                            value="requested_formats"
+                                            type="checkbox"
+                                        />
+                                        Requested Formats
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="format"
+                                            value="format"
+                                            type="checkbox"
+                                        />
+                                        Format
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="format_id"
+                                            value="format_id"
+                                            type="checkbox"
+                                        />
+                                        Format ID
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="ext"
+                                            value="ext"
+                                            type="checkbox"
+                                        />
+                                        Ext
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="protocol"
+                                            value="protocol"
+                                            type="checkbox"
+                                        />
+                                        Protocol
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="language"
+                                            value="language"
+                                            type="checkbox"
+                                        />
+                                        Language
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="format_note"
+                                            value="format_note"
+                                            type="checkbox"
+                                        />
+                                        Format Note
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="filesize_approx"
+                                            value="filesize_approx"
+                                            type="checkbox"
+                                        />
+                                        Filesize Approx
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="tbr"
+                                            value="tbr"
+                                            type="checkbox"
+                                        />
+                                        Tbr
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="width"
+                                            value="width"
+                                            type="checkbox"
+                                        />
+                                        Width
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="height"
+                                            value="height"
+                                            type="checkbox"
+                                        />
+                                        Height
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="resolution"
+                                            value="resolution"
+                                            type="checkbox"
+                                        />
+                                        Resolution
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="fps"
+                                            value="fps"
+                                            type="checkbox"
+                                        />
+                                        Fps
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="dynamic_range"
+                                            value="dynamic_range"
+                                            type="checkbox"
+                                        />
+                                        Dynamic Range
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="vcodec"
+                                            value="vcodec"
+                                            type="checkbox"
+                                        />
+                                        Vcodec
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="vbr"
+                                            value="vbr"
+                                            type="checkbox"
+                                        />
+                                        Vbr
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="stretched_ratio"
+                                            value="stretched_ratio"
+                                            type="checkbox"
+                                        />
+                                        Stretched Ratio
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="acodec"
+                                            value="acodec"
+                                            type="checkbox"
+                                        />
+                                        Acodec
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="abr"
+                                            value="abr"
+                                            type="checkbox"
+                                        />
+                                        Abr
+                                    </label>
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button type="button" class="button is-light">
+                                    <label class="checkbox">
+                                        <input
+                                            name="asr"
+                                            value="asr"
+                                            type="checkbox"
+                                        />
+                                        Asr
+                                    </label>
                                 </button>
                             </p>
                         </div>
@@ -168,13 +929,26 @@
             <div class="container is-fluid">
                 <article class="message is-info">
                     <div class="message-body">
-                    <div class="content">
+                        <div class="content">
                             <ul>
-                                <li>The playlist must be <strong>public</strong>. </li>
-                                <li>You can download the tables as json using the specific buttons after the process is complete. </li>
-                                <li>Try it with: <p>
+                                <li>
+                                    The playlist must be
+                                    <strong>public</strong>.
+                                </li>
+                                <li>
+                                    You can download the tables as json using
+                                    the specific buttons after the process is
+                                    complete.
+                                </li>
+                                <li>
+                                    Try it with:
+                                    <p>
                                         <em>
-                                            <a href="https://www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX"> https://www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX </a>
+                                            <a
+                                                href="https://www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX"
+                                            >
+                                                https://www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX
+                                            </a>
                                         </em>
                                     </p>
                                 </li>
@@ -185,4 +959,5 @@
             </div>
         </div>
     </div>
-</div> {% endblock %}
+</div>
+{% endblock %}
