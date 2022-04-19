@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, send_file, redirect
 from query import check_query
 from extraction import processing
-from flask_caching import Cache
 from werkzeug.exceptions import HTTPException
 
 """
@@ -12,31 +11,20 @@ Webpage created with Flask.
 
 app = Flask(__name__)
 
-config = {
-    "CACHE_TYPE": "SimpleCache",
-    "CACHE_DEFAULT_TIMEOUT": 1000
-}
-app.config.from_mapping(config)
-cache = Cache(app)
-
-
 # route of homepage
 @app.route('/', methods=['GET', 'POST'])
 def home_page():
-    cache.clear()
     return render_template('home_page.html')
 
 
 # route after clicking the submit button
 @app.route('/process', methods=['GET', 'POST'])
-@cache.cached(key_prefix='process')
 def result():
-    cache.clear()
+
     if request.method == 'POST':
         # get playlist url from form
         # limit to first 150 characters
         playlist_url = str(request.form['Playlist_URL'][0:150]).strip()
-        cache.set('Playlist_URL', playlist_url)
 
         # get attributes to extract from form
         info_attributes = set()
@@ -72,7 +60,6 @@ def result():
 # route for downloading a data table as json
 @app.route('/download', methods=['GET', 'POST'])
 def download():
-    cache.clear()
     if request.method == 'POST':
         path = request.form['Download']
         return send_file(path, as_attachment=True)
@@ -83,7 +70,6 @@ def download():
 # route for query error page
 @app.route('/error', methods=['GET', 'POST'])
 def error():
-    cache.clear()
     if request.method == 'POST':
         return render_template('query_error.html')
     else:
