@@ -65,7 +65,6 @@ def processing(u, filter_keys):
 
         # video info
         video_info = info['entries'].copy()
-        print(video_info)
     # save json with playlist_information
     with open('playlist_info.json', 'w') as j_file:
         json.dump(playlist_info, j_file, indent=4)
