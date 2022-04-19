@@ -44,7 +44,7 @@ def processing(u, filter_keys):
     }
 
     # fast download if specific arguments are selected
-    fast_keys = {'id', 'title', 'duration', 'uploader', 'webpage_url'}
+    fast_keys = {'_type', 'url', 'ie_key', 'id', 'title', 'duration', 'uploader', 'channel_id', 'thumbnails', 'webpage_url'}
 
     if filter_keys.issubset(fast_keys):
         ydl_opts['extract_flat'] = 'in_playlist'
@@ -61,11 +61,11 @@ def processing(u, filter_keys):
 
         # playlist info
         playlist_info = info.copy()
-        playlist_info.pop("entries")
+        playlist_info.pop('entries')
 
         # video info
         video_info = info['entries'].copy()
-
+        print(video_info)
     # save json with playlist_information
     with open('playlist_info.json', 'w') as j_file:
         json.dump(playlist_info, j_file, indent=4)
@@ -104,10 +104,7 @@ def processing(u, filter_keys):
 if __name__ == '__main__':
     # DEBUG
     link = 'https://www.youtube.com/playlist?list=PLNyOBdEynvBp1E03WBh33-PhBG9WSQ-uX'
-    set_of_arguments = {'playlist_index', 'id', 'title', 'uploader', 'upload_date', 'view_count', 'like_count',
-                        'average_rating', 'duration', 'age_limit', 'categories', 'webpage_url', 'alt_title',
-                        'uploader_id', 'uploader_url', 'channel_id', 'channel_url', 'tags', 'thumbnails',
-                        'description'}
-    set_of_arguments1 = {'id', 'title', 'duration', 'uploader', 'webpage_url'}
+    set_of_arguments = {'id', 'title', 'formats', 'thumbnails', 'thumbnail', 'description', 'uploader', 'uploader_id', 'uploader_url', 'channel_id', 'channel_url', 'duration', 'view_count', 'average_rating', 'age_limit', 'webpage_url', 'categories', 'tags', 'playable_in_embed', 'is_live', 'was_live', 'live_status', 'release_timestamp', 'automatic_captions', 'subtitles', 'chapters', 'like_count', 'channel', 'channel_follower_count', 'upload_date', 'availability', 'original_url', 'webpage_url_basename', 'webpage_url_domain', 'extractor', 'extractor_key', 'n_entries', '_last_playlist_index', 'playlist_count', 'playlist_index', 'playlist_autonumber', 'playlist', 'playlist_id', 'playlist_title', 'playlist_uploader', 'playlist_uploader_id', 'display_id', 'fulltitle', 'duration_string', 'requested_subtitles', '__has_drm', 'requested_formats', 'format', 'format_id', 'ext', 'protocol', 'language', 'format_note', 'filesize_approx', 'tbr', 'width', 'height', 'resolution', 'fps', 'dynamic_range', 'vcodec', 'vbr', 'stretched_ratio', 'acodec', 'abr', 'asr'}
+    set_of_arguments1 = {'_type', 'ie_key', 'id', 'title', 'duration',  'uploader', 'channel_id', 'thumbnails', 'webpage_url'}
     processing(link, set_of_arguments)
     processing(link, set_of_arguments1)
