@@ -6,11 +6,13 @@ A simple website to get playlist and video information from a YT playlist as a .
 *thus the demo website does not work properly anymore, returning an error even when a query is valid*
 
 
-~~**[DEMO WEBSITE](http://ytgrabber.eu.pythonanywhere.com/)**~~ BROKEN
+**[DEMO WEBSITE](http://ytgrabber.eu.pythonanywhere.com/)** (06/09/22 BROKEN)
 
 
 Hosted on [eu.pythoneverywhere.com](https://eu.pythonanywhere.com/).
 
+
+![](example.gif)
 
 # Dependencies
 
