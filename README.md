@@ -12,7 +12,8 @@ A simple website to get playlist and video information from a YT playlist as a .
 Hosted on [eu.pythoneverywhere.com](https://eu.pythonanywhere.com/).
 
 
-![](example.mp4)
+https://user-images.githubusercontent.com/77164768/188749024-5f9b5190-4e7c-430a-ae57-3f8e79429aaa.mp4
+
 
 # Dependencies
 
